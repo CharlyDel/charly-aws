@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/api/v1', methods=['GET'])
 def get_data():
-    with open('C:\\Users\\cdelbauche\\pythonhello\\charly-aws\\backend-ccharly\\data.json') as f:
+    with open("donnees/data.json") as f:
         data = json.load(f)
         results = [{'id': item['id'], 'nom': item['nom'], 'nom_de_famille': item['nom_de_famille'], 'email': item['email']} for item in data]
     return jsonify(results)
